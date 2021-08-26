@@ -25,6 +25,7 @@ const usiesDataSchema = new mongoose.Schema({
   toolStack: [
     {
       type: String,
+      required: false,
     },
   ],
   // short way
