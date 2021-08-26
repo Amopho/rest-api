@@ -29,13 +29,13 @@ const usiesDataSchema = new mongoose.Schema({
   ],
   // short way
   email: String,
-  employeeAddedDate: {
+  usiesAddedDate: {
     type: Date,
     required: true,
     default: Date.now,
   },
 });
 // create new collection
-module.exports = mongoose.model("UsiesData", usiesDataSchema);
+// module.exports = mongoose.model("UsiesData", usiesDataSchema);
 // work on old collection that we have
-// module.exports = mongoose.model("UsiesData",usiesDataSchema, "UsiesData");
+module.exports = mongoose.model("UsiesData", usiesDataSchema, "UsiesData");
