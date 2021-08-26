@@ -18,11 +18,11 @@ const usiesDataSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  age: {
+  fbw: {
     type: Number,
     required: true,
   },
-  toolStach: [
+  toolStack: [
     {
       type: String,
     },
@@ -36,6 +36,6 @@ const usiesDataSchema = new mongoose.Schema({
   },
 });
 // create new collection
-// module.exports = mongoose.model("UsiesData", usiesDataSchema);
+module.exports = mongoose.model("UsiesData", usiesDataSchema);
 // work on old collection that we have
-module.exports = mongoose.model("UsiesData", usiesDataSchema, "UsiesData");
+// module.exports = mongoose.model("UsiesData", usiesDataSchema, "UsiesData");
