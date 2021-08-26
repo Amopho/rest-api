@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const UsiesData = require("../model/usiesModel");
 
+// GET all users
+// url http://localhost:5000/usies
 router.get("/", async (req, res) => {
   try {
     const usies = await UsiesData.find();
@@ -11,7 +13,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Add new, POST new employee
+// Add new, POST new user
 router.post("/", async (req, res) => {
   const usie = new UsiesData({
     userName: req.body.userName,
