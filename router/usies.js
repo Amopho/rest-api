@@ -14,6 +14,7 @@ router.get("/", async (req, res) => {
 });
 
 // Add new, POST new user
+// POST http://localhost:5000/usies/
 router.post("/", async (req, res) => {
   const usie = new UsiesData({
     userName: req.body.userName,
@@ -31,5 +32,17 @@ router.post("/", async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+
+// A PUT request endpoint at /user/:name to update user from DB upon their name
+// http://localhost:5000/employees/:name
+
+// // Update employees by name
+// PUT http://localhost:5000/employees/:name -->  update employee by name
+// router.put("/update/:add", getAdd, updateManyEmployees);
+
+// Get many employees by address
+// router.get("/search/:add", getAdd, (req, res) => {
+//   res.status(200).json(res.employee);
+// });
 
 module.exports = router;
