@@ -11,14 +11,27 @@ const UsiesData = require("../model/usiesModel");
 //   deleteOneEmployee,
 //   updateAllEmployeeData,
 // } = require("../controllers/employeeController");
-// http://localhost:5000/usies -->  get all users, root route w/o controllers, getAllUsies
-// POST   http://localhost:5000/usies  -->  add user, addNewEmployee
-//
 
-// GET http://localhost:3000/employees/:name -->  get employee by name
-// PATCH http://localhost:3000/employees/:name -->  update employee by name
-// DELETE http://localhost:3000/employees/:name -->  delete employee by name
-// UPDATE aka PUT http://localhost:3000/employees/:name -->  update employee by name
+// Routers:
+// landing page
+// '/'
+
+//http://localhost:5000/usies -->  display all users, root route w/o controllers,
+//CONTROLER getAllUsies
+
+// POST   http://localhost:5000/usies  -->  add user to db,
+// CONTROLER addNewUsie
+
+// GET http://localhost:5000/usies/:name -->  get usie upon name criteria, params name.
+// CONTROLER getUsie
+
+// PUT http://localhost:5000/usies/:name -->  update employee by name
+//CONTROLER updateOneUsie
+
+// PATCH http://localhost:5000/usies/:name -->  update some users upon the same name
+//CONTROLER updateManyUsies
+
+// DELETE http://localhost:5000/employees/:name -->  delete employee by name
 
 // Get many employees by address
 // router.get("/search/:add", getAdd, (req, res) => {

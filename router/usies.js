@@ -2,6 +2,17 @@ const express = require("express");
 const router = express.Router();
 const UsiesData = require("../model/usiesModel");
 
+// landing page GET all employees or POST new employee
+// url http://localhost:5000/
+//const {
+//   getAllUsies,
+//   addNewUsie,
+// } = require("../controllers/employeeController");
+//router.route("/").get(getAllUsies).post(addNewUsie);
+
+//
+//
+//
 // GET all users
 // url http://localhost:5000/usies
 router.get("/", async (req, res) => {

@@ -1,3 +1,6 @@
+WHere is the request part (GET, POST, PATCH, PUT) in the controllers requestwhich seem like routers?
+Do the routers from made as imports of controller function are having them instead?
+
 # Rest API
 
 Rest API example to practice
