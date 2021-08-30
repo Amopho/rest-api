@@ -2,19 +2,19 @@ const express = require("express");
 const router = express.Router();
 const UsiesData = require("../model/usiesModel");
 
-// landing page GET all employees or POST new employee
+// Routers:
+// landing page
+// '/'
+// landing page GET all users or POST new user
 // url http://localhost:5000/
 //const {
 //   getAllUsies,
 //   addNewUsie,
-// } = require("../controllers/employeeController");
+// } = require("../controllers/usieController");
 //router.route("/").get(getAllUsies).post(addNewUsie);
 
-//
-//
-//
-// GET all users
-// url http://localhost:5000/usies
+//GET http://localhost:5000/usies -->  display all users, root route w/o controllers,
+//CONTROLER getAllUsies
 router.get("/", async (req, res) => {
   try {
     const usies = await UsiesData.find();
@@ -24,8 +24,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Add new, POST new user
-// POST http://localhost:5000/usies/
+// POST   http://localhost:5000/usies  -->  add user to db,
+// CONTROLER addNewUsie
 router.post("/", async (req, res) => {
   const usie = new UsiesData({
     userName: req.body.userName,
@@ -42,6 +42,12 @@ router.post("/", async (req, res) => {
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
+});
+
+// GET http://localhost:5000/usies/:name -->  get usie upon name criteria, params name.
+// CONTROLER getUsie
+router.get("/:name", getUsie, (req, res) => {
+  res.status(200).json(res.usie);
 });
 
 // A PUT request endpoint at /user/:name to update user from DB upon their name

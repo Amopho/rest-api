@@ -2,6 +2,24 @@
 // var express = require('express')
 // var app = express()
 
+// Middleware
+async function getUsie(req, res, next) {
+  let usie;
+  try {
+    // employee = await EmployeesData.findById(req.params.id);
+    // employee = await EmployeesData.find({ name: req.params.name });
+
+    usie = await UsiesData.findOne({ name: req.params.name });
+    if (usie == null)
+      return res.status(404).json({ message: "User NOT Found" });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+  console.log(usie);
+  res.usie = usie;
+  next();
+}
+
 // var myLogger = function (req, res, next) {
 //   console.log('LOGGED')
 //   next()
@@ -16,8 +34,8 @@
 // app.listen(3000)
 
 // http:localhost:5000/employees
-// const employees = require("./router/employees");
-// app.use("/employees", employees);
+// const usies = require("./router/usies");
+// app.use("/usies", usies);
 
 // app.get("/", (req, res) => {
 //   res.status(200).send("Welcome to our app");

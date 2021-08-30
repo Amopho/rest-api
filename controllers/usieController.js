@@ -2,7 +2,7 @@ const express = require("express");
 const UsiesData = require("../model/usiesModel");
 
 // const {
-//   getEmployee,
+//   getUsie,
 //   getAllUsies,
 //   getAdd,
 //   addNewEmployee,
