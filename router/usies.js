@@ -11,14 +11,7 @@ const userController = require("../controllers/usieController");
 // url http://localhost:5000/
 //GET http://localhost:5000/usies -->  display all users, root route w/o controllers,
 //CONTROLER getAllUsies
-router.get("/", async (req, res) => {
-  try {
-    const usies = await UsiesData.find();
-    res.status(200).json(usies);
-  } catch {
-    res.status(500).json({ message: err.message });
-  }
-});
+router.route("/").get(userController.getAllUsers);
 
 // POST   http://localhost:5000/usies  -->  add user to db,
 // CONTROLER addNewUsie
