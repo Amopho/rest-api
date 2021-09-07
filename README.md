@@ -14,6 +14,19 @@ Create a Express server that handles:
 - A `PATCH` request endpoint at `/user/:name` to update some user data from DB upon their name.
 - A `GET` request endpoint at `/display/:name` to display one user from DB upon their name.
 
+```javascript
+// GET all
+app.get("/");
+// POST add new one
+app.post("/");
+// GET one by ID
+app.get("/:id");
+// patch one
+app.patch("/:id");
+// delete one
+app.delete("/:id");
+```
+
 New user endpoint should be able to accept a JSON object like the following:
 
 ```json
@@ -122,3 +135,95 @@ Let's take care for some scripts from package.json. Server.js will be a default 
 ```
 "start": "nodemon server.js"
 ```
+
+## PUT
+
+entire document for specific person
+
+## PATCH
+
+updates
+
+Display what I have in my database, to print it out however I want.
+
+## lowercase
+
+you always store lowercase, not the crazy stuff
+
+## Middleware
+
+Schema
+entered username, pass, age, email- check if they were entered
+
+## ANother middleware
+
+multiple middleware
+
+- over 18 - you re too young
+- belongs to 48- and tell - you are not belonging here
+
+First than I will be able to add them to
+
+If a middleware will fail in any stage
+
+## Combined names
+
+- two surnames
+
+##
+
+create a middleware that turn age and fbw into number- but postman will never show it even if its a number,
+
+7 middlewares
+
+## Router
+
+Every route in different file
+Root route- welcome
+2 routes- user and sdisplay- 2 seperate files - user.js and handle them all the user routes,
+
+other multiple routes,
+nested routes (like search)
+
+User - root -
+userController is an object, and getAllUsers is a method (lives in controller userController)
+=>exporting an object and importing it with its method
+
+```javascript
+.get(userController.getAllusers);
+```
+
+creating and initialiazing empty object
+
+```javascript
+const userController = {};
+```
+
+.find will always come back with an arreay of documents
+.findOne- commes back with one specific document which it met as the first one
+
+Middlewares in user- more, more complex middlewares will make more secure application.
+importing by this way, will tell the module to search any index.js iside that directory
+
+```javascript
+require("../middleware/");
+```
+
+Age check grabbed from req.body., parseInt(age, 10)<...
+
+## Model
+
+Trim everything besides password, leave it as has been passed. In the near future we will be encrypting it, so it doesn't get viewed.
+
+Some important code chunks:
+
+res.user = ... => fillimg the response object
+
+change by whatever has been passed || or keep the old database
+
+option:
+new:true
+than I send true as an option- i want to show the updated version
+
+time stamp - ifyou like
+findby, find and update options have a save build in

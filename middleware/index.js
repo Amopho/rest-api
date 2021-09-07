@@ -1,12 +1,11 @@
-// // middleware as the name suggests may be placed somewhere in the middle of the layer of the software and another
-// var express = require('express')
-// var app = express()
-
+const usiesModel = require("../model/usiesModel");
+// middleware as the name suggests may be placed somewhere in the middle of the layer of the software and another
+const userMiddleware = {};
 // Middleware
 async function getUsie(req, res, next) {
   let usie;
   try {
-    // employee = await EmployeesData.findById(req.params.id);
+    //  = await EmployeesData.findById(req.params.id);
     // employee = await EmployeesData.find({ name: req.params.name });
 
     usie = await UsiesData.findOne({ name: req.params.name });
