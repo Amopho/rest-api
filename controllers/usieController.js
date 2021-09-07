@@ -31,7 +31,7 @@ const UsiesData = require("../model/usiesModel");
 // PATCH http://localhost:5000/usies/:name -->  update some users upon the same name
 //CONTROLER updateManyUsies
 
-// DELETE http://localhost:5000/employees/:name -->  delete employee by name
+// DELETE http://localhost:5000/usies/:name -->  delete employee by name
 
 // Get many employees by address
 // router.get("/search/:add", getAdd, (req, res) => {

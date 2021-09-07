@@ -2,18 +2,13 @@ const express = require("express");
 const router = express.Router();
 const app = express();
 const UsiesData = require("../model/usiesModel");
+const userController = require("../controllers/usieController");
 
 // Routers:
 // landing page
 // '/'
 // landing page GET all users or POST new user
 // url http://localhost:5000/
-//const {
-//   getAllUsies,
-//   addNewUsie,
-// } = require("../controllers/usieController");
-//router.route("/").get(getAllUsies).post(addNewUsie);
-
 //GET http://localhost:5000/usies -->  display all users, root route w/o controllers,
 //CONTROLER getAllUsies
 router.get("/", async (req, res) => {
