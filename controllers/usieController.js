@@ -30,6 +30,23 @@ userController.getAllUsers = async (req, res) => {
 
 // POST   http://localhost:5000/user  -->  add user to db,
 // CONTROLER addNewUsie
+userController.addNewUsie = async (req, res) => {
+  const usie = new UsiesData({
+    userName: req.body.userName,
+    userPass: req.body.userPass,
+    age: req.body.age,
+    fbw: req.body.fbw,
+    toolStack: req.body.toolStack,
+    email: req.body.email,
+  });
+  try {
+    const newUsie = await usie.save();
+    console.log(newUsie);
+    res.status(201).json({ newUsie, message: "New user added" });
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+};
 
 // GET http://localhost:5000/user/:name -->  get usie upon name criteria, params name.
 // CONTROLER getUsie
