@@ -3,7 +3,7 @@ const router = express.Router();
 const app = express();
 const UsiesData = require("../model/usiesModel");
 const userController = require("../controllers/usieController");
-
+const userMiddleware = require("../middleware/index");
 // Routers:
 // landing page
 // '/'
@@ -11,17 +11,18 @@ const userController = require("../controllers/usieController");
 // url http://localhost:5000/
 //GET http://localhost:5000/usies -->  display all users, root route w/o controllers,
 //CONTROLER getAllUsies
+// POST   http://localhost:5000/usies  -->  add user to db,
+// CONTROLER addNewUsie
 router
   .route("/")
   .get(userController.getAllUsers)
-  .post(userController.addNewUsie);
-
-// POST   http://localhost:5000/usies  -->  add user to db,
-// CONTROLER addNewUsie
+  .post(userController.postNewUsie);
 
 // GET http://localhost:5000/usies/:name -->  get usie upon name criteria, params name.
 // CONTROLER getUsie
+
 //
+router.route("/:name").get(userMiddleware.getUser);
 //
 //
 // router.get("/:name", getUsie, (req, res) => {

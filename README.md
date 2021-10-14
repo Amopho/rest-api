@@ -136,6 +136,35 @@ Let's take care for some scripts from package.json. Server.js will be a default 
 "start": "nodemon server.js"
 ```
 
+About working with server and database:
+
+Some errors solving during development time:
+
+# EADDRINUSE
+
+receive the EADDRINUSE (PORT already in use) error when connecting through a PORT. If your problem is just that the server doesn't listen to the PORT on the first try and you just keep having to restart until it works, this might help:
+
+```javascript
+const server = http.createServer(app);
+server
+  .listen(PORT, console.log(`Server is listening on http://localhost:${PORT}`))
+  .on("error", (e) => {
+    if (e.code === "EADDRINUSE") {
+      console.log(e);
+      console.log("PORT in use, retrying ...");
+      setTimeout(() => {
+        server.close();
+        server.listen(
+          PORT,
+          console.log(`Server is listening on http://localhost:${PORT}`)
+        );
+      }, 1000);
+    }
+  });
+```
+
+It will automatically try to listen every second to the PORT until it is successful. From the Nodejs documentation here: https://nodejs.org/api/net.html#net_server_listen
+
 ## PUT
 
 entire document for specific person

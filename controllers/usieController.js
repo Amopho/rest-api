@@ -1,4 +1,7 @@
 const UsiesData = require("../model/usiesModel");
+const router = require("../router/usies");
+
+const userMiddleware = require("../middleware/index");
 
 const userController = {};
 
@@ -16,9 +19,8 @@ const userController = {};
 // landing page
 // '/'
 
-//http://localhost:5000/user -->  display all users, root route w/o controllers,
+//http://localhost:5000/user -->  display all users
 //CONTROLER getAllUsers
-
 userController.getAllUsers = async (req, res) => {
   try {
     const usies = await UsiesData.find();
@@ -29,8 +31,8 @@ userController.getAllUsers = async (req, res) => {
 };
 
 // POST   http://localhost:5000/user  -->  add user to db,
-// CONTROLER addNewUsie
-userController.addNewUsie = async (req, res) => {
+// CONTROLER postNewUsie
+userController.postNewUsie = async (req, res) => {
   const usie = new UsiesData({
     userName: req.body.userName,
     userPass: req.body.userPass,
@@ -49,8 +51,7 @@ userController.addNewUsie = async (req, res) => {
 };
 
 // GET http://localhost:5000/user/:name -->  get usie upon name criteria, params name.
-// CONTROLER getUsie
-
+// CONTROLER getUser
 // PUT http://localhost:5000/user/:name -->  update employee by name
 //CONTROLER updateOneUsie
 
