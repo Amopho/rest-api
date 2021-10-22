@@ -1,6 +1,16 @@
 WHere is the request part (GET, POST, PATCH, PUT) in the controllers requestwhich seem like routers?
 Do the routers from made as imports of controller function are having them instead?
 
+## What an API is
+
+1. An API is a set of defined rules that explain how computers or applications communicate with one another. APIs sit between an application and the web server, acting as an intermediary layer that processes data transfer between systems.
+2. Here’s how an API works:
+
+- A client application initiates an API call to retrieve information—also known as a request. This request is processed from an application to the web server via the API’s Uniform Resource Identifier (URI) and includes a request verb, headers, and sometimes, a request body.
+- After receiving a valid request, the API makes a call to the external program or web server.
+- The server sends a response to the API with the requested information.
+- The API transfers the data to the initial requesting application.
+
 # Rest API
 
 Rest API example to practice
@@ -27,18 +37,7 @@ app.patch("/:id");
 app.delete("/:id");
 ```
 
-New user endpoint should be able to accept a JSON object like the following:
-
-```json
-{
-  "userName": "steel",
-  "userPass": "123pass",
-  "age": "32",
-  "fbw": "48",
-  "toolStack": ["Js", "Html5", "Css3", "Sass"],
-  "email": "contact@steel.eu"
-}
-```
+s
 
 ## For the endpoint `/user` that adds new user
 
